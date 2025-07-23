@@ -1,0 +1,12 @@
+name: Python Test CI/CD
+
+on: [push]  # Runs on every code push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4  # Checks out your code
+    - name: Run Python tests
+      run: |
+        python -c "import calculator; calculator.test_add()"
